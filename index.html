@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+    scroll-behavior: smooth;
+}
+p{
+    font-weight: 300;
+    color: #111;
+}
+header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 20px 10px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.5s;
+}
+ .logo{
+    /*color: #fff;*/
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+ }
+ .logo span{
+   color: #fb911f;
+ }
+ .navbar{
+display: flex;
+position: relative;
+ }
+ .navbar li{
+    list-style: none;
+ }
+ .navbar a{
+    /*color: #fff;*/
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+ }
+ .btn-reserve{
+    padding: 10px;
+    background: #fb911f;
+    margin-top: -10px;
+    text-transform: uppercase;
+ }
+ .btn-reserve:hover{
+    background:#d87710 ;
+    transition: ease-out;
+ }
+ header.navbar li a:hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f; 
+ }
+ .banniere{
+    position: relative;
+    width:100% ;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url(./image/istockphoto-162980784-612x612.jpg) ;
+    background-size: cover;
+ }
+  .banniere.contenu{
+    max-width: 70%;
+    text-align: center;
+  }
+  .banniere.contenu h2{
+    color: #111;
+    font-size: 3em;
+    text-transform: capitalize;
+  }
+  .contenu p:nth-child(2){
+    color: #ffff;
+    font-size: 1.2ems;
+  }
+  .bnt1{
+    font-size: 1em;
+    color: #fff;
+    background: #fb911f;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px ;
+  }
+
+  .bnt2{
+    font-size: 1em;
+    color: #fff;
+    background: #2a4963;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px ;
+  }
+  .bnt1:hover{
+    letter-spacing: 4px;
+
+  }
+  section{
+    padding: 100px;
+
+  }
+  .row{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .row.close{
+    position: relative;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+  }
+  .row.close h2{
+    margin-bottom: 20px;
+  }
+  .titre-texte{
+    color: #000;
+    font-size: 2em;
+    font-weight: 300px;
+    text-transform: capitalize;
+
+  }
+  .titre-texte span{
+    color: #fb911f;
+    font-size: 1.5em;
+    font-weight: 700px;
+  }
+  .row.close img{
+    height: 450px;
+    width: 600px;
+    position: relative;
+  }
+  .titre{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .menu{
+    margin-top: -100px;
+  }
+  .menu.contenu{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .menu.contenu.box{
+    width: 350px;
+    margin-top: 20px;
+    border: 20px solid#ffff;
+    box-shadow:20px 15px 35px rgba(0, 0, 0, 0.8);
+  }
+  .menu.contenu.box.imbox {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+  .menu.contenu.box.imbox img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  .menu.contenu.box.text{
+    text-align:center;
+    font-weight: 300px;
+    color: #111;
+
+  }
+  .contact{
+    background-image: url(./image/50c2f18633f1b96366a6319d10ad7c25.jpg);
+    background-size: cover;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0);
+    width: 100;
+    background-position: unset;
+  }
+  .contactform{
+    padding: 75px 50px;
+    background: #fff;
+    box-shadow: 5px 15px 50px rgba(0, 0, 0, 0);
+    max-width: 500px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 38%;
+  }
+  .contactform.inputboite {
+    position: relative;
+    width: 100;
+    margin-bottom: 20px;
+  }
+  .contactform h3{
+    color: #111;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  .contactform.inputboite input,
+  .contactform textarea{
+    width: 100;
+    border: 1px solid#555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    resize: none;
+  }
+  .contactform input[type="submit"]{
+    font-size: 1em;
+    font-weight: 700;
+    color: #ffff;
+    background: #fb911f;
+    display:inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration:none ;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    transition: 0.5s;
+    max-width: 120px;
+    align-items: center;
+    justify-content:center;
+
+  }
+  .copyright{
+    padding: 20px 40px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    background: rgba(228,222, 222);
+    text-align: center;
+  }
+  .copyright p:nth-last-child(1){
+    color: #333;
+  }
+  .copyright a{
+    color: #fb911f;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+  }
+  .contact .titre-text span{
+    color: #fb911f;
+    font-size: 2em;
+  }
+  header.sticky{
+    background: #fff;
+    padding: 10px 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+  }
+  header.sticky.logo{
+    color: #000;
+  }
+  header.sticky.navbar li a {
+    color: #000;
+  }
+  header.sticky li a :hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f;
+  }
+  .menutoglle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+  .menutoglle.active{
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-origin: center;
+  }
+  header.sticky .menutoglle{
+    filter: invert(1);
+    
+  }
+  
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><section>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet">
+
+    <title>Resto</title>   
+</head>
+<body>
+    <header>
+    
+       <a href="#" class="logo"><span>R</span>esto</a>
+       <ul class="navbar">
+           <li><a href="#" onclick="toggleMenu();"> A propos </a></li>
+           <li><a href="#"  onclick="toggleMenu();"> Menu</a></li>
+           <li><a href="#"  onclick="toggleMenu();">contact</a></li>
+           <a href="#" class="btn-reserve"> Reservation</a>
+
+       </ul> 
+    </header>
+    <section class="banniere" id="banniere">
+        <div class="contenu">
+            <h2> Que des mets Délicieux</h2>
+            <p> Pour les amoureux de la bonne nourritures ,vous etes a la bonne adresseet nous sommes present pour vous fait plaisir </p>
+            <a href="#" class="bnt1">Notre Menu</a>
+            <a href="#" class="bnt2">Reservation</a>
+        </di>
+    </section>
+    <section class="Apropos" id="Apropos">
+        <div class="row">
+            <div class="col50">
+                <h2 class=" titre-texte"><span> A</span>propos De Nous</h2>
+                <p>Nous vous proposons uniquement des mets africain,nous sommes situé a la palmeraie non loin de la BIBICI . nous sommes ouvert du lundi au samedi de 8H30 a 19H30
+                     </p>
+            </div>
+           <div class="col50">
+        <div class="img">
+            <img src="image/cuisine-africaine-fruits-legumes.jpg" alt="image">
+            </div>
+        </div>
+    </section>
+    <section class="menu" id="menu">
+        <div class="titre">
+            <h2 class=" titre-texte"><span> M</span>enu</h2>
+            <p> Nous avons une multitudes de plats dont voici.
+                 </p>
+        </div>
+        <div class="contenu">
+            <div class="box">
+                <div class="imbox">
+                    <img src="./image/sauce.jpg" alt="">
+
+                </div>
+                <div class="text">
+                    <h3> Special banane plantains</h3>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imbox">
+                <img src="./image/i77374-bonava-ou-ragout-d-agneau-mauritanien.jpg" alt="">
+                <div class="text">
+                    <h3> Ragout d'Agneau</h3>
+                </div>
+            </div>
+
+           
+            <div class="box">
+                <div class="imbox">
+                    <img src="./image/50c2f18633f1b96366a6319d10ad7c25.jpg" alt="">
+    
+                </div>
+                <div class="text">
+                    <h3> Du riz  au poulet</h3>
+                </div>
+            </div>
+            <div class="text">
+                <h3></h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imbox">
+                <img src="./image/istockphoto-1067302478-612x612.jpg" alt="">
+                <div class="text">
+                    <h3> Du véritable Garba</h3>
+                </div>
+            </div>
+            </div>
+        </div>
+       
+        
+        <div class="box">
+            <div class="imbox">
+                <img src="./image/Screen-Shot-2022-03-13-at-11.09.42-PM-264x264.png" alt="">
+
+            </div>
+            <div class="text">
+                <h3> De l'aloco</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imbox">
+                <img src="./image/images.jfif" alt="">
+
+            </div>
+            <div class="text">
+                <h3> Du  bon foufou</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imbox">
+                <img src="./image/vente-nourriture-Africaine.jpg" alt="">
+
+            </div>
+            <div class="text">
+                <h3> La varieté</h3>
+            </div>
+        </div>
+    </div>
+    <div class="titre">
+        <a href="#" class="bnt1">Voir plus</a>
+    </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="titre noir">
+            <h2 class="titre-text"><span>C</span>ontact</h2>
+            <p> Passez vos commandes.</p>
+        </div>
+        <div class="contactform">
+            <h3> Envoyer un message</h3>
+            <div class="inputboite">
+                <input type="text" placeholder="Nom">
+            </div>
+            <div class="inputboite">
+                <input type="text" placeholder="email">
+
+    
+            </div>
+            <div>
+                <textarea placeholder="message"></textarea>
+
+            </div>
+            <div>
+                <input type="submit" value="Envoyer">
+            </div>
+           
+        </div>
+    </section>
+    <div class="copyright">
+        <p>copyright <a href ="#"> Desireebolinan </a>creation de sites internet</p>
+    </div>
+    <script type="text/javascript">
+        window.addEventListener('scroll',funtion()){
+            const header=document.querySelector('header');
+            header.classList.toggle("sticky",window.scrollY> 0 );
+        }
+        function toggleMenu(){
+const toggleMenu=document.querySelector('.menutoglle');
+header.navbar=document.querySelector('navbar');
+menutoglle.classList.toggle('active');
+navbar.classList.toglle('active');
+
+        }
+
+    </script>
+    
+</body>
+</html>
